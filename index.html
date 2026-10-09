@@ -265,6 +265,90 @@
     .matrix-grid { grid-template-columns: 1fr; }
     section { padding: 60px 0; }
   }
+
+  /* ===== Editorial 视觉刷新（中文排版适配）===== */
+  :root { --maxw: 1280px; --orange: #ff642d; --orange-soft: #ff8458; }
+  .nav { background: rgba(4, 17, 31, .88); backdrop-filter: blur(14px); }
+  .nav-inner { height: 76px; }
+  .brand-mark { border-radius: 50%; background: var(--orange); }
+  .nav-links { gap: 24px; }
+  .nav-cta { border-radius: 999px; padding: 10px 20px; }
+  .hero { min-height: 790px; padding: 150px 0 38px; display: flex; align-items: center; }
+  .hero::before {
+    background: linear-gradient(90deg, rgba(3, 17, 31, .91) 0%, rgba(4, 25, 43, .78) 48%, rgba(4, 24, 43, .34) 100%),
+      linear-gradient(0deg, rgba(3, 17, 31, .68), transparent 52%),
+      url('images/hero.jpg') center 57% / cover no-repeat;
+  }
+  .hero-grid { gap: clamp(38px, 6vw, 86px); grid-template-columns: 1fr .92fr; }
+  .eyebrow { color: #ffb08b; letter-spacing: .12em; }
+  .hero h1 { font-size: clamp(40px, 5.6vw, 66px); line-height: 1.08; letter-spacing: .02em; max-width: 660px; }
+  .hero h1 .hl { color: #ff7544; }
+  .hero-sub { color: rgba(255,255,255,.78); max-width: 580px; font-size: 17px; }
+  .btn { border-radius: 999px; padding: 15px 25px; }
+  .btn-ghost { border-color: rgba(255,255,255,.48); background: rgba(255,255,255,.06); }
+  .hero-fig img { height: 430px; object-fit: cover; border-radius: 8px; box-shadow: 0 26px 70px rgba(0,0,0,.32); }
+  .hero-fig::after { inset: 16px -16px -16px 16px; border-color: rgba(255,255,255,.45); border-radius: 8px; }
+  .hero-stats { margin-top: 68px; grid-template-columns: repeat(4, 1fr); border-radius: 8px; background: rgba(255,255,255,.14); }
+  .stat { background: rgba(4,20,37,.76); padding: 20px 24px; }
+  .stat b { font-size: clamp(20px, 2.3vw, 29px); }
+  .stat span { color: rgba(231,241,250,.7); }
+  section { padding: 100px 0; }
+  .sec-head { max-width: 790px; margin-bottom: 42px; }
+  .sec-tag { letter-spacing: .16em; }
+  .sec-title { font-size: clamp(28px, 3.8vw, 46px); letter-spacing: .02em; }
+  .sec-lead { font-size: 16.5px; line-height: 1.8; }
+  .mission-band { background: #071a2d; color: #fff; padding: 88px 0 96px; }
+  .mission-band .sec-title { color: #fff; }
+  .mission-band .sec-lead { color: #aabac9; }
+  .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .mission-card { position: relative; min-height: 360px; overflow: hidden; border-radius: 8px; background: #0e2b44; }
+  .mission-card img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; position: absolute; inset: 0; transition: transform .55s; }
+  .mission-card:hover img { transform: scale(1.045); }
+  .mission-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(3,15,27,.88), rgba(3,15,27,.02) 76%); }
+  .mission-copy { position: absolute; z-index: 1; left: 26px; right: 24px; bottom: 24px; }
+  .mission-copy span { color: #ffb08b; font-size: 12px; letter-spacing: .1em; font-weight: 700; }
+  .mission-copy h3 { font-size: 24px; margin: 7px 0 4px; letter-spacing: .01em; }
+  .mission-copy p { color: rgba(255,255,255,.75); font-size: 14px; }
+  .featured { background: #f4f6f7; }
+  .pcard { border: 0; border-radius: 8px; box-shadow: 0 8px 30px rgba(6,24,46,.045); }
+  .pcard-media { aspect-ratio: 16/9; }
+  .pcard-media img { transition: transform .55s; }
+  .pcard-body { padding: 26px 28px 30px; }
+  .pcard-body h4 { font-size: 22px; }
+  .pcard-badge { border-radius: 999px; }
+  .mcard { border: 0; border-radius: 8px; box-shadow: 0 8px 24px rgba(6,24,46,.04); }
+  .mcard-body { padding: 18px 20px 20px; }
+  .about-fig img { border-radius: 8px; }
+  .adv { background: #0b2942; }
+  .adv-card { border-radius: 8px; }
+  .cert-card .imgbox { border-radius: 8px; }
+  .case-tag { border-radius: 999px; }
+  .contact-card { border-radius: 8px; }
+  .cside { border-radius: 8px; }
+  footer { background: #04111f; }
+  @media (max-width: 960px) {
+    .hero { min-height: auto; padding: 132px 0 38px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+    .hero-fig { max-width: 700px; }
+    .hero-fig img { height: min(55vw, 420px); }
+    .mission-grid { grid-template-columns: 1fr 1fr; }
+    .mission-card:last-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    .nav-inner { height: 68px; }
+    .nav-links { top: 68px; }
+    .hero { padding-top: 116px; }
+    .hero h1 { font-size: clamp(34px, 11vw, 50px); }
+    .hero-sub { font-size: 15.5px; }
+    .hero-fig img { height: 70vw; }
+    .hero-stats { margin-top: 40px; }
+    .stat { padding: 16px 14px; }
+    .stat b { font-size: 20px; }
+    .mission-grid { grid-template-columns: 1fr; }
+    .mission-card:last-child { grid-column: auto; }
+    .mission-card, .mission-card img { min-height: 300px; }
+    section { padding: 68px 0; }
+  }
 </style>
 </head>
 <body>
@@ -281,6 +365,7 @@
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#home" class="on">首页</a>
+      <a href="#applications">应用场景</a>
       <a href="#about">关于我们</a>
       <a href="#products">核心产品</a>
       <a href="#matrix">产品矩阵</a>
@@ -321,6 +406,31 @@
     </div>
   </div>
 </header>
+
+<!-- 应用场景 -->
+<section class="mission-band" id="applications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">时刻待命</span>
+      <h2 class="sec-title">一个使命，覆盖所有水域环境</h2>
+      <p class="sec-lead">针对开阔水域、洪涝区域与水下搜救任务，提供快速响应的专业装备。</p>
+    </div>
+    <div class="mission-grid">
+      <a class="mission-card" href="#products">
+        <img src="images/assault-boat.jpg" alt="救援人员在开阔水域操作船只" loading="lazy">
+        <div class="mission-copy"><span>01 · 开放水域</span><h3>海滩与海洋救援</h3><p>快速响应的漂浮与两栖救援装备。</p></div>
+      </a>
+      <a class="mission-card" href="#products">
+        <img src="images/self-righting-boat.jpg" alt="救援船在洪水中作业" loading="lazy">
+        <div class="mission-copy"><span>02 · 洪涝响应</span><h3>河流与洪水救援</h3><p>抵达难以进入的水域，及时救援与输送物资。</p></div>
+      </a>
+      <a class="mission-card" href="#matrix">
+        <img src="images/diver-propulsion.jpg" alt="潜水员使用水下推进装备" loading="lazy">
+        <div class="mission-copy"><span>03 · 搜救打捞</span><h3>水下作业</h3><p>用于苛刻任务的水下探测与搜救工具。</p></div>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- 关于我们 -->
 <section id="about">
@@ -680,7 +790,7 @@
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
   // 滚动高亮
-  const sections = ['home','about','products','matrix','advantages','cert','cases','contact'];
+  const sections = ['home','applications','about','products','matrix','advantages','cert','cases','contact'];
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   window.addEventListener('scroll', () => {
     let cur = 'home';
