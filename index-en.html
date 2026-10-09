@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shenzhen Dajiang Intelligent Manufacturing — AI Water Rescue Equipment Manufacturer</title>
+<meta name="description" content="Shenzhen Dajiang Intelligent Manufacturing Co., Ltd. (DA JIANG RESCUE) — a high-tech enterprise integrating R&D, design, production and sales of water rescue equipment. Flying life buoys, rescue boats, rescue robots and full-range water rescue solutions.">
+<style>
+  :root {
+    --deep: #06182e;
+    --navy: #0b2b4a;
+    --navy-2: #123a63;
+    --orange: #ff5a1f;
+    --orange-soft: #ff7a45;
+    --paper: #ffffff;
+    --mist: #f4f7fa;
+    --ink: #0f1e2f;
+    --muted: #5b6b7c;
+    --line: #e4eaf0;
+    --maxw: 1180px;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+            Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ===== Nav ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(6, 24, 46, 0.92);
+    backdrop-filter: saturate(1.2) blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: box-shadow .25s;
+  }
+  .nav.scrolled { box-shadow: 0 6px 30px rgba(4, 14, 26, 0.35); }
+  .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+    height: 68px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 12px; color: #fff; }
+  .brand-mark {
+    width: 38px; height: 38px; border-radius: 9px; flex: none;
+    background: linear-gradient(135deg, var(--orange), #e6430f);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 19px; color: #fff;
+  }
+  .brand-text { line-height: 1.15; }
+  .brand-cn { font-weight: 700; font-size: 15px; letter-spacing: 0.02em; }
+  .brand-en { font-size: 11px; letter-spacing: 0.2em; color: #9fb3c8; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { color: #c8d6e5; font-size: 14.5px; font-weight: 500;
+    letter-spacing: 0.01em; transition: color .2s; position: relative; }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a.on { color: #fff; }
+  .nav-links a.on::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px;
+    background: var(--orange); border-radius: 2px;
+  }
+  .nav-cta { background: var(--orange); color: #fff !important; padding: 9px 18px;
+    border-radius: 8px; font-weight: 600 !important; }
+  .nav-cta:hover { background: var(--orange-soft) !important; }
+  .burger { display: none; background: none; border: none; cursor: pointer;
+    flex-direction: column; gap: 5px; padding: 6px; }
+  .burger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+  /* ===== Hero ===== */
+  .hero { position: relative; background: var(--deep); color: #fff;
+    padding: 150px 0 90px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(255, 90, 31, 0.16), transparent 60%),
+      radial-gradient(700px 500px at -10% 110%, rgba(18, 58, 99, 0.55), transparent 60%);
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 13px;
+    letter-spacing: 0.22em; color: var(--orange); font-weight: 600; margin-bottom: 22px;
+    text-transform: uppercase; }
+  .eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--orange); }
+  .hero h1 { font-size: clamp(40px, 5.2vw, 60px); line-height: 1.06; font-weight: 800;
+    letter-spacing: -0.025em; margin-bottom: 22px; }
+  .hero h1 .hl { color: var(--orange); }
+  .hero-sub { font-size: 18px; color: #b7c7d8; max-width: 540px; line-height: 1.65;
+    margin-bottom: 34px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+    border-radius: 10px; font-size: 16px; font-weight: 600; letter-spacing: 0.01em;
+    cursor: pointer; border: none; transition: transform .15s, background .2s, color .2s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--orange); color: #fff; }
+  .btn-primary:hover { background: var(--orange-soft); }
+  .btn-ghost { background: transparent; color: #e8eef5; border: 1px solid rgba(255,255,255,0.28); }
+  .btn-ghost:hover { border-color: #fff; color: #fff; }
+  .hero-fig { position: relative; }
+  .hero-fig img { border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    width: 100%; height: auto; }
+  .hero-fig::after {
+    content: ""; position: absolute; inset: 14px -14px -14px 14px;
+    border: 2px solid rgba(255, 90, 31, 0.45); border-radius: 18px; z-index: -1;
+  }
+  .hero-stats { position: relative; margin-top: 70px; display: grid;
+    grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; }
+  .stat { background: rgba(9, 29, 52, 0.65); padding: 24px 26px; }
+  .stat b { display: block; font-size: 30px; font-weight: 800; color: #fff;
+    letter-spacing: -0.01em; line-height: 1.1; }
+  .stat b em { font-style: normal; color: var(--orange); font-size: 18px; }
+  .stat span { font-size: 13px; color: #9fb3c8; letter-spacing: 0.02em; }
+
+  /* ===== Sections ===== */
+  section { padding: 88px 0; }
+  .sec-head { margin-bottom: 48px; }
+  .sec-tag { display: inline-flex; align-items: center; gap: 9px; font-size: 13px;
+    color: var(--orange); font-weight: 700; letter-spacing: 0.2em; margin-bottom: 14px;
+    text-transform: uppercase; }
+  .sec-tag::before { content: ""; width: 26px; height: 2px; background: var(--orange); }
+  .sec-title { font-size: clamp(26px, 3.2vw, 38px); font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.02em; color: var(--ink); }
+  .sec-lead { margin-top: 14px; font-size: 16.5px; color: var(--muted); max-width: 660px; }
+
+  /* ===== About ===== */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
+  .about-fig img { border-radius: 16px; width: 100%; }
+  .about-body h3 { font-size: 26px; font-weight: 800; margin-bottom: 18px; line-height: 1.2;
+    letter-spacing: -0.02em; }
+  .about-body p { color: var(--muted); margin-bottom: 16px; }
+  .about-body p strong { color: var(--ink); font-weight: 600; }
+  .vision { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 24px; }
+  .vision-row { display: flex; gap: 14px; margin-bottom: 16px; }
+  .vision-row .k { flex: none; width: 64px; font-weight: 700; color: var(--orange);
+    font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase; }
+  .vision-row .v { color: var(--ink); }
+
+  /* ===== Featured ===== */
+  .featured { background: var(--mist); }
+  .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .pcard { background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .25s, transform .25s; }
+  .pcard:hover { box-shadow: 0 22px 50px rgba(6, 24, 46, 0.12); transform: translateY(-4px); }
+  .pcard-media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #eaf0f6; }
+  .pcard-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .pcard:hover .pcard-media img { transform: scale(1.04); }
+  .pcard-badge { position: absolute; top: 14px; left: 14px; background: var(--orange);
+    color: #fff; font-size: 11.5px; font-weight: 700; padding: 4px 11px; border-radius: 6px;
+    letter-spacing: 0.03em; }
+  .pcard-body { padding: 24px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+  .pcard-body h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .pcard-en { font-size: 11.5px; color: #9aa7b5; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 12px; }
+  .pcard-desc { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+  .specs { border-top: 1px solid var(--line); padding-top: 16px; margin-top: auto; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+  .spec { display: flex; gap: 8px; font-size: 13px; }
+  .spec .sk { color: #8a98a8; flex: none; }
+  .spec .sv { color: var(--ink); font-weight: 600; }
+
+  /* ===== Matrix ===== */
+  .matrix-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+  .mtab { padding: 9px 20px; border-radius: 999px; border: 1px solid var(--line);
+    background: #fff; color: var(--muted); font-size: 14px; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.01em; transition: all .2s; }
+  .mtab:hover { border-color: var(--navy-2); color: var(--ink); }
+  .mtab.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .matrix-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .mcard { background: #fff; border: 1px solid var(--line); border-radius: 13px;
+    overflow: hidden; transition: box-shadow .25s, transform .25s; cursor: pointer; }
+  .mcard:hover { box-shadow: 0 16px 38px rgba(6,24,46,0.1); transform: translateY(-3px); }
+  .mcard-media { aspect-ratio: 4/3; overflow: hidden; background: #eaf0f6; }
+  .mcard-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+  .mcard:hover .mcard-media img { transform: scale(1.05); }
+  .mcard-body { padding: 16px 18px 18px; }
+  .mcard-body h5 { font-size: 15.5px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .mcard-body p { font-size: 12.5px; color: var(--muted); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* ===== Advantages ===== */
+  .adv { background: var(--navy); color: #fff; }
+  .adv .sec-title { color: #fff; }
+  .adv .sec-lead { color: #a9bccf; }
+  .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .adv-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 28px 26px; transition: background .2s, border-color .2s; }
+  .adv-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,90,31,0.5); }
+  .adv-card .n { font-size: 13px; font-weight: 700; color: var(--orange);
+    letter-spacing: 0.14em; margin-bottom: 12px; }
+  .adv-card h4 { font-size: 17.5px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .adv-card p { color: #b6c6d6; font-size: 14px; }
+
+  /* ===== Cert ===== */
+  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .cert-card { text-align: left; }
+  .cert-card .imgbox { aspect-ratio: 3/4; background: var(--mist); border-radius: 13px;
+    overflow: hidden; border: 1px solid var(--line); }
+  .cert-card .imgbox img { width: 100%; height: 100%; object-fit: cover; }
+  .cert-card h5 { margin-top: 12px; font-size: 16px; font-weight: 700; }
+  .cert-card p { font-size: 13px; color: var(--muted); }
+
+  /* ===== Cases ===== */
+  .cases { background: var(--mist); }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 12px; }
+  .case-tag { background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 13px 22px; font-size: 14.5px; font-weight: 600; color: var(--ink);
+    letter-spacing: 0.01em; transition: all .2s; }
+  .case-tag:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(6,24,46,0.08); }
+
+  /* ===== Contact ===== */
+  .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: stretch; }
+  .contact-card { background: var(--deep); color: #fff; border-radius: 18px; padding: 46px 44px; }
+  .contact-card h3 { font-size: 28px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.02em; }
+  .contact-card .lead { color: #a9bccf; margin-bottom: 32px; font-size: 15.5px; }
+  .citem { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .citem .ck { flex: none; width: 96px; color: #8fa3b8; font-size: 13px; letter-spacing: 0.03em; }
+  .citem .cv { font-size: 16px; font-weight: 600; }
+  .citem .cv a { color: var(--orange); }
+  .contact-side { display: flex; flex-direction: column; gap: 20px; }
+  .cside { background: var(--mist); border: 1px solid var(--line); border-radius: 16px;
+    padding: 28px; flex: 1; }
+  .cside h5 { font-size: 16.5px; font-weight: 700; margin-bottom: 10px; }
+  .cside p { color: var(--muted); font-size: 14px; }
+
+  /* ===== Footer ===== */
+  footer { background: #041120; color: #7e91a5; padding: 40px 0; font-size: 13.5px; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .foot-inner .fbrand { color: #c8d6e5; font-weight: 700; font-size: 14.5px; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 120px 0 70px; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .matrix-grid { grid-template-columns: repeat(2, 1fr); }
+    .adv-grid { grid-template-columns: 1fr 1fr; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { position: fixed; top: 68px; left: 0; right: 0; background: var(--deep);
+      flex-direction: column; gap: 0; padding: 10px 24px 24px; transform: translateY(-130%);
+      transition: transform .3s; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-links.open { transform: translateY(0); }
+    .nav-links a { padding: 14px 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-links a.on::after { display: none; }
+    .burger { display: flex; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .adv-grid { grid-template-columns: 1fr; }
+    .matrix-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">D</span>
+      <span class="brand-text">
+        <span class="brand-cn">Dajiang Intelligent Mfg.</span><br>
+        <span class="brand-en">DA JIANG RESCUE</span>
+      </span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="on">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#matrix">Range</a>
+      <a href="#advantages">Advantages</a>
+      <a href="#cert">Certifications</a>
+      <a href="#cases">Clients</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="index.html" style="color:#9fb3c8;font-size:13px;letter-spacing:.06em;">中文</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">AI Water Rescue Equipment Manufacturer</span>
+        <h1>Technology that<br><span class="hl">Safeguards Life</span></h1>
+        <p class="hero-sub">Shenzhen Dajiang Intelligent Manufacturing Co., Ltd. is a high-tech enterprise integrating R&amp;D, design, production and sales of water rescue equipment — flying life buoys, rescue boats and rescue robots for air, surface and underwater rescue.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Explore Products</a>
+          <a href="#contact" class="btn btn-ghost">Request a Quote</a>
+        </div>
+      </div>
+      <div class="hero-fig">
+        <img src="images/hero.jpg" alt="Dajiang water rescue equipment" width="1588" height="1600">
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>2018<em></em></b><span>Founded in Shenzhen · High-Tech Enterprise</span></div>
+      <div class="stat"><b>27<em>+</em></b><span>Water Rescue Product Lines</span></div>
+      <div class="stat"><b>Integrated</b><span>R&amp;D · Design · Production · Sales</span></div>
+      <div class="stat"><b>Full-Domain</b><span>Air · Surface · Underwater · Robots</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-fig"><img src="images/about.jpg" alt="Dajiang Intelligent Manufacturing" width="1200" height="601"></div>
+      <div class="about-body">
+        <span class="sec-tag">About Us</span>
+        <h3>A Professional Water Rescue Equipment Manufacturer</h3>
+        <p>Founded in <strong>September 2018</strong> and located in Shenzhen, China, the company is a specialist manufacturer of water rescue equipment — a high-tech enterprise integrating <strong>R&amp;D, design, production and sales</strong>.</p>
+        <p>Our product range covers water surface rescue stretchers, surface rescue flying wings, surface rescue robots, flying rescue boats, flying life buoys, remote-controlled life buoys, underwater search &amp; rescue robots, unmanned survey boats, fire reconnaissance robots and firefighting robots.</p>
+        <p>Guided by the spirit of <strong>"integrity first, innovation at heart"</strong>, we are committed to high efficiency, high quality and customer satisfaction.</p>
+        <div class="vision">
+          <div class="vision-row"><span class="k">Vision</span><span class="v">To become the leading water rescue equipment manufacturer in China through innovation</span></div>
+          <div class="vision-row"><span class="k">Mission</span><span class="v">Pragmatic innovation for a better future</span></div>
+          <div class="vision-row"><span class="k">Service</span><span class="v">Quality, efficiency and customer satisfaction; continuous improvement</span></div>
+          <div class="vision-row"><span class="k">Motto</span><span class="v">Harmony · Win-win · Development</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Featured Products</span>
+      <h2 class="sec-title">Flagship Rescue Equipment</h2>
+      <p class="sec-lead">Amphibious, BeiDou-positioned, auto-return, dual-light video — industry-leading intelligent rescue equipment for water rescue, supply transport and underwater search missions.</p>
+    </div>
+    <div class="featured-grid">
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">Amphibious · Industry-First Voice Broadcast</span>
+          <img src="images/flying-ring.jpg" alt="Flying Life Buoy" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>Flying Life Buoy</h4>
+          <div class="pcard-en">Amphibious Rescue Ring</div>
+          <p class="pcard-desc">Combines surface rescue with aerial flight. Supports remote flight, waypoint auto-flight, point-to-fly and mid-air hovering — overcoming terrain limits for rapid response.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Size</span><span class="sv">950×950×110 mm</span></div>
+              <div class="spec"><span class="sk">Max altitude</span><span class="sv">520 m</span></div>
+              <div class="spec"><span class="sk">Max speed</span><span class="sv">14 m/s</span></div>
+              <div class="spec"><span class="sk">Wind resistance</span><span class="sv">Level 7</span></div>
+              <div class="spec"><span class="sk">Protection</span><span class="sv">IP68</span></div>
+              <div class="spec"><span class="sk">Flight time</span><span class="sv">15 min</span></div>
+              <div class="spec"><span class="sk">Positioning</span><span class="sv">BeiDou · IR dual-light video</span></div>
+              <div class="spec"><span class="sk">Remote range</span><span class="sv">1–10 km</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">Amphibious · Voice Intercom</span>
+          <img src="images/flying-boat.jpg" alt="Flying Rescue Boat" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>Flying Rescue Boat</h4>
+          <div class="pcard-en">Air &amp; Water Amphibious Boat</div>
+          <p class="pcard-desc">Air and water amphibious with onboard control keys and an HD camera (optional IR dual-light). The remote terminal displays real-time video with voice intercom and broadcast.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Size</span><span class="sv">1150×1100×300 mm</span></div>
+              <div class="spec"><span class="sk">Weight</span><span class="sv">15 kg</span></div>
+              <div class="spec"><span class="sk">No-load speed</span><span class="sv">12 m/s (air) / 4 m/s (water)</span></div>
+              <div class="spec"><span class="sk">Manned speed</span><span class="sv">2 m/s (60 kg)</span></div>
+              <div class="spec"><span class="sk">Remote range</span><span class="sv">10 km (air) / 1100 m (water)</span></div>
+              <div class="spec"><span class="sk">Endurance</span><span class="sv">8.5 min (air) / 30 min (water)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">Tri-GNSS · Auto Return</span>
+          <img src="images/remote-ring.jpg" alt="Remote-Controlled Life Buoy" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>Remote-Controlled Life Buoy</h4>
+          <div class="pcard-en">Motorized Rescue Buoy</div>
+          <p class="pcard-desc">Designed for water rescue with powerful propulsion and advanced navigation. Deploys in three seconds for drowning rescue and supply transport in rivers, lakes and oceans.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Size</span><span class="sv">1100×800×200 mm</span></div>
+              <div class="spec"><span class="sk">Buoyancy</span><span class="sv">1500 N</span></div>
+              <div class="spec"><span class="sk">No-load / loaded</span><span class="sv">6.5 / 2.1 m/s</span></div>
+              <div class="spec"><span class="sk">Endurance</span><span class="sv">90 min</span></div>
+              <div class="spec"><span class="sk">Remote range</span><span class="sv">1500 m</span></div>
+              <div class="spec"><span class="sk">Towing force</span><span class="sv">1000 kg</span></div>
+              <div class="spec"><span class="sk">Positioning</span><span class="sv">GPS + GALILEO + BeiDou</span></div>
+              <div class="spec"><span class="sk">Protection / hull</span><span class="sv">IP68 / HDPE</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">One-Piece Molded</span>
+          <img src="images/u-ring.jpg" alt="U-Shaped Life Buoy" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>U-Shaped Life Buoy</h4>
+          <div class="pcard-en">Grab-Bar Rescue Buoy</div>
+          <p class="pcard-desc">A one-piece molded grab bar in the middle for a firm hold. One-hand operation with long-range remote control for fast, low-risk shore-based rescue.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Size</span><span class="sv">1020×800×200 mm</span></div>
+              <div class="spec"><span class="sk">Buoyancy</span><span class="sv">500 N</span></div>
+              <div class="spec"><span class="sk">No-load / loaded</span><span class="sv">6.5 / 2.1 m/s</span></div>
+              <div class="spec"><span class="sk">Endurance</span><span class="sv">90 min</span></div>
+              <div class="spec"><span class="sk">Remote range</span><span class="sv">1500 m</span></div>
+              <div class="spec"><span class="sk">Towing force</span><span class="sv">500 kg</span></div>
+              <div class="spec"><span class="sk">Positioning</span><span class="sv">GPS + GALILEO + BeiDou</span></div>
+              <div class="spec"><span class="sk">Voice intercom</span><span class="sv">≥ 2000 m</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">Custom Payloads</span>
+          <img src="images/surface-robot.jpg" alt="Surface Rescue Robot" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>Surface Rescue Robot</h4>
+          <div class="pcard-en">Multi-Person Rescue Platform</div>
+          <p class="pcard-desc">Delivers flotation to casualties faster and more accurately, carrying rescue supplies in complex water conditions for island transfers and multi-person rescue.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Payloads</span><span class="sv">Video link / GoPro camera</span></div>
+              <div class="spec"><span class="sk">Options</span><span class="sv">Two-way loudspeaker / searchlight / rescue kit</span></div>
+              <div class="spec"><span class="sk">Missions</span><span class="sv">Island transfer · multi-person rescue</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">80 L/S Cannon · All-Terrain Tracks</span>
+          <img src="images/fire-robot.jpg" alt="Firefighting Robot" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>Firefighting Robot</h4>
+          <div class="pcard-en">Remote Fire Suppression Robot</div>
+          <p class="pcard-desc">Lithium-battery powered with long-range remote operation, replacing firefighters in dangerous missions. Fire suppression, audio/video reconnaissance and hazardous-gas detection.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Dimensions</span><span class="sv">≤1650×950×1300 mm</span></div>
+              <div class="spec"><span class="sk">Weight</span><span class="sv">~470 kg</span></div>
+              <div class="spec"><span class="sk">Cannon flow</span><span class="sv">80 L/S</span></div>
+              <div class="spec"><span class="sk">Cannon range</span><span class="sv">&gt; 80 m</span></div>
+              <div class="spec"><span class="sk">Max climbing</span><span class="sv">40°</span></div>
+              <div class="spec"><span class="sk">Max obstacle</span><span class="sv">220 mm</span></div>
+              <div class="spec"><span class="sk">Protection</span><span class="sv">IP65</span></div>
+              <div class="spec"><span class="sk">Continuous operation</span><span class="sv">3 h</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">100 m Depth · 4K Video</span>
+          <img src="images/underwater-robot.jpg" alt="Underwater Search and Rescue ROV" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>Underwater Search &amp; Rescue ROV</h4>
+          <div class="pcard-en">Mini Underwater Robot</div>
+          <p class="pcard-desc">Compact, lightweight and flexible — replaces divers in hazardous underwater environments. Thrusters, camera, sonar, manipulator and display controller included.</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">Size</span><span class="sv">400×268×166 mm</span></div>
+              <div class="spec"><span class="sk">Max depth</span><span class="sv">≥ 100 m</span></div>
+              <div class="spec"><span class="sk">Max speed</span><span class="sv">≥ 1.5 m/s</span></div>
+              <div class="spec"><span class="sk">Thrusters</span><span class="sv">8</span></div>
+              <div class="spec"><span class="sk">Video</span><span class="sv">4K @ 30 FPS</span></div>
+              <div class="spec"><span class="sk">Endurance</span><span class="sv">1–2 h</span></div>
+              <div class="spec"><span class="sk">Manipulator</span><span class="sv">grip ≥ 70 N</span></div>
+              <div class="spec"><span class="sk">Lights</span><span class="sv">2 × 2000 LM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Product Range</span>
+      <h2 class="sec-title">Full Range of Water Rescue Equipment</h2>
+      <p class="sec-lead">From air to surface, from underwater to special-purpose robots — covering every emergency rescue scenario.</p>
+    </div>
+    <div class="matrix-tabs" id="matrixTabs">
+      <button class="mtab on" data-cat="all">All</button>
+      <button class="mtab" data-cat="air">Air Rescue</button>
+      <button class="mtab" data-cat="surface">Surface Rescue</button>
+      <button class="mtab" data-cat="underwater">Underwater</button>
+      <button class="mtab" data-cat="robot">Special Robots</button>
+      <button class="mtab" data-cat="aux">Survey &amp; Auxiliary</button>
+    </div>
+    <div class="matrix-grid" id="matrixGrid">
+
+      <div class="mcard" data-cat="air"><div class="mcard-media"><img src="images/lighting-drone.jpg" alt="Illumination Drone" loading="lazy"></div><div class="mcard-body"><h5>Illumination Drone</h5><p>≥24 h airborne emergency lighting, modular, ≤30 s deployment</p></div></div>
+
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/stretcher.jpg" alt="Water Surface Rescue Stretcher" loading="lazy"></div><div class="mcard-body"><h5>Water Surface Rescue Stretcher</h5><p>Buoyancy ≥150 kg, remote ≥1000–3000 m, foldable option</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/salvage-robot.jpg" alt="Water Salvage Robot" loading="lazy"></div><div class="mcard-body"><h5>Water Salvage Robot</h5><p>Dual manipulator arms, buoyancy ≥200 kg, rescues conscious/unconscious victims</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/self-inflate-boat.jpg" alt="Self-Inflating Rescue Boat" loading="lazy"></div><div class="mcard-body"><h5>Self-Inflating Rescue Boat</h5><p>One-key auto inflation, rescues up to 4–6 people</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/portable-boat.jpg" alt="Portable Rescue Scooter" loading="lazy"></div><div class="mcard-body"><h5>Portable Surface/Underwater Scooter</h5><p>40 m diving, 22 km/h, weight &lt;31 kg</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/self-righting-boat.jpg" alt="Self-Righting Rescue Boat" loading="lazy"></div><div class="mcard-body"><h5>Self-Righting Rescue Boat</h5><p>Auto self-righting from 90° capsize, multi-layer reinforced hull</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/rubber-boat.jpg" alt="Inflatable Rescue Boat" loading="lazy"></div><div class="mcard-body"><h5>Inflatable Rescue Boat</h5><p>7–9 persons, 1200 kg safe load, withstands level 3–4 waves</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/assault-boat.jpg" alt="Rescue Assault Boat" loading="lazy"></div><div class="mcard-body"><h5>Rescue Boat (Assault Boat)</h5><p>12 persons, load ≥860 kg, anti-slip deck</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/outboard.jpg" alt="Outboard Motor" loading="lazy"></div><div class="mcard-body"><h5>Outboard Motor</h5><p>Output ≥20 kW, full-rudder angle ≥48°</p></div></div>
+
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/sonar.jpg" alt="Sonar" loading="lazy"></div><div class="mcard-body"><h5>Sonar</h5><p>1000 kHz, single-side 1–35 m, 70 m total coverage</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/diving-salvage.jpg" alt="Diving Salvage System" loading="lazy"></div><div class="mcard-body"><h5>Diving Salvage System</h5><p>Lifting bags 2000–4000 kg per unit</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/diver-propulsion.jpg" alt="Diver Propulsion Vehicle" loading="lazy"></div><div class="mcard-body"><h5>Diver Propulsion Vehicle</h5><p>Extra underwater propulsion to conserve diver energy</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/depth-meter.jpg" alt="Depth Sounder" loading="lazy"></div><div class="mcard-body"><h5>Depth Sounder</h5><p>High-precision, portable, real-time measurement</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/flow-meter.jpg" alt="Flow Velocity Meter" loading="lazy"></div><div class="mcard-body"><h5>Flow Velocity Meter</h5><p>Handheld electromagnetic flow meter, high accuracy</p></div></div>
+
+      <div class="mcard" data-cat="robot"><div class="mcard-media"><img src="images/demolition-robot.jpg" alt="Demolition Robot" loading="lazy"></div><div class="mcard-body"><h5>Demolition Robot</h5><p>4500 kg, 360° rotation, hydraulic demolition modules</p></div></div>
+      <div class="mcard" data-cat="robot"><div class="mcard-media"><img src="images/smoke-robot.jpg" alt="Smoke Exhaust Robot" loading="lazy"></div><div class="mcard-body"><h5>Smoke Exhaust Robot</h5><p>High exhaust volume, high traction, tracked chassis</p></div></div>
+      <div class="mcard" data-cat="robot"><div class="mcard-media"><img src="images/drain-robot.jpg" alt="Drainage Robot" loading="lazy"></div><div class="mcard-body"><h5>Drainage Robot</h5><p>Max flow &gt;750 m³/h, suction head &gt;6 m</p></div></div>
+
+      <div class="mcard" data-cat="aux"><div class="mcard-media"><img src="images/survey-boat.jpg" alt="Unmanned Survey Boat" loading="lazy"></div><div class="mcard-body"><h5>Unmanned Survey Boat</h5><p>ADCP, depth sounder, water quality, 4G transmission</p></div></div>
+      <div class="mcard" data-cat="aux"><div class="mcard-media"><img src="images/launcher.jpg" alt="Rescue Line Launcher" loading="lazy"></div><div class="mcard-body"><h5>Rescue Line Launcher</h5><p>Voice ranging, compressed-air drive, multi-angle launch</p></div></div>
+      <div class="mcard" data-cat="aux"><div class="mcard-media"><img src="images/rope-bag.jpg" alt="Rescue Throw Bag and Pole" loading="lazy"></div><div class="mcard-body"><h5>Rescue Throw Bag &amp; Pole</h5><p>Ultra-light carbon fiber, multi-configuration</p></div></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="adv" id="advantages">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Technical Advantages</span>
+      <h2 class="sec-title">Intelligent Control · Safety Redundancy</h2>
+      <p class="sec-lead">Full-chain automation and multi-layer safety redundancy eliminate mission interruption and protect equipment and personnel.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card"><div class="n">01</div><h4>Multi-Modal Flight Control</h4><p>Remote flight, waypoint auto-flight, point-to-fly and mid-air hovering for rapid response across terrain.</p></div>
+      <div class="adv-card"><div class="n">02</div><h4>Full-Chain Automation</h4><p>One-key takeoff/return and low-battery/lost-link auto-return; route planning for precise path control.</p></div>
+      <div class="adv-card"><div class="n">03</div><h4>Autonomous Positioning</h4><p>BeiDou positioning, precise hovering, low-battery warning and lost-link return — multiple safety redundancies.</p></div>
+      <div class="adv-card"><div class="n">04</div><h4>All-Weather Imaging</h4><p>HD infrared + visible dual-light camera streaming real-time surface/air footage day, night and in harsh weather.</p></div>
+      <div class="adv-card"><div class="n">05</div><h4>Long-Range Voice Intercom</h4><p>Industry-first built-in voice broadcast, 1–10 km remote range — no external radio or phone app required.</p></div>
+      <div class="adv-card"><div class="n">06</div><h4>High Protection Rating</h4><p>IP68 / IP65 protection, rugged HDPE hull, level-7 wind resistance and level-2 sea state capability.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cert">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Certifications</span>
+      <h2 class="sec-title">Qualifications &amp; Certificates</h2>
+      <p class="sec-lead">Trademark certificate, ISO system certificate, patent certificates, qualification certificates, computer software copyright and product test reports.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-trademark.png" alt="Trademark Certificate" loading="lazy"></div><h5>Trademark Certificate</h5><p>Registered trademark</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-iso.png" alt="ISO System Certificate" loading="lazy"></div><h5>ISO System Certificate</h5><p>Quality management system</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-patent.png" alt="Patent Certificate" loading="lazy"></div><h5>Patent Certificate</h5><p>Patented technology</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-qualification.png" alt="Qualification Certificate" loading="lazy"></div><h5>Qualification Certificate</h5><p>Enterprise qualification</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-software.png" alt="Computer Software Copyright" loading="lazy"></div><h5>Computer Software Copyright</h5><p>Software copyright registration</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-test.png" alt="Product Test Report" loading="lazy"></div><h5>Product Test Report</h5><p>Product inspection &amp; testing</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Clients &amp; Use Cases</span>
+      <h2 class="sec-title">Trusted in Real Rescue Missions</h2>
+      <p class="sec-lead">Deployed across emergency management, fire and rescue, maritime affairs, coast guard, public security and flood control.</p>
+    </div>
+    <div class="case-tags">
+      <span class="case-tag">Ministry of Emergency Management</span>
+      <span class="case-tag">Hainan Airlines</span>
+      <span class="case-tag">Jiangxi Fire &amp; Rescue</span>
+      <span class="case-tag">Harbin Forest Fire Brigade</span>
+      <span class="case-tag">Guangxi Zhuang Autonomous Region Government</span>
+      <span class="case-tag">Guangdong Veterans Affairs Dept.</span>
+      <span class="case-tag">Sichuan Fire &amp; Rescue</span>
+      <span class="case-tag">Tianjin Public Security Bureau</span>
+      <span class="case-tag">Guangxi Emergency Management</span>
+      <span class="case-tag">Fujian-based Unit</span>
+      <span class="case-tag">Fuzhou Coast Guard</span>
+      <span class="case-tag">Dongguan Fire &amp; Rescue</span>
+      <span class="case-tag">Dalian Fire &amp; Rescue</span>
+      <span class="case-tag">Liaoning Fire &amp; Rescue</span>
+      <span class="case-tag">Dandong Maritime Safety Administration</span>
+      <span class="case-tag">Shanwei Emergency Management</span>
+      <span class="case-tag">Chaoyang Fire &amp; Rescue</span>
+      <span class="case-tag">Blue Sky Rescue (BSR)</span>
+      <span class="case-tag">Dazhou Fire &amp; Rescue</span>
+      <span class="case-tag">Tianjin Fire &amp; Rescue</span>
+      <span class="case-tag">Ziyang Emergency Management</span>
+      <span class="case-tag">Hainan Emergency Management</span>
+      <span class="case-tag">Hubei Rescue Corps</span>
+      <span class="case-tag">Qiqihar Fire &amp; Rescue</span>
+      <span class="case-tag">Longyan Mine Rescue</span>
+      <span class="case-tag">Guang'an Fire &amp; Rescue</span>
+      <span class="case-tag">Yellow River Hydrology</span>
+      <span class="case-tag">Yangtze River Hydrology</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="sec-tag">Contact Us</span>
+        <h3>Shenzhen Dajiang Intelligent Manufacturing Co., Ltd.</h3>
+        <p class="lead">We welcome enquiries from emergency, fire, maritime, coast guard and public security agencies, as well as distributors worldwide.</p>
+        <div class="citem"><span class="ck">Contact</span><span class="cv">Zhang Lianjian</span></div>
+        <div class="citem"><span class="ck">Phone</span><span class="cv"><a href="tel:+8613576562431">+86 135 7656 2431</a></span></div>
+        <div class="citem"><span class="ck">Website</span><span class="cv"><a href="http://www.szdjzz.com" target="_blank" rel="noopener">www.szdjzz.com</a></span></div>
+        <div class="citem"><span class="ck">Address</span><span class="cv">No. 17 Meihua Road, East Baishixia Community, Fuyong Street, Bao'an District, Shenzhen, Guangdong, China</span></div>
+      </div>
+      <div class="contact-side">
+        <div class="cside"><h5>Customization</h5><p>Products support payload and feature customization for different scenarios, including IR dual-light cameras, voice intercom and custom mounting.</p></div>
+        <div class="cside"><h5>Products &amp; Support</h5><p>Integrated R&amp;D, design, production and sales of water rescue equipment, plus technical documentation (specifications, test reports) support.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="fbrand">Shenzhen Dajiang Intelligent Manufacturing Co., Ltd. · DA JIANG RESCUE</div>
+    <div>© 2018–2026 Shenzhen Dajiang Intelligent Manufacturing Co., Ltd. · Technology Safeguards Life</div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
+
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navLinks');
+  burger.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const sections = ['home','about','products','matrix','advantages','cert','cases','contact'];
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let cur = 'home';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) cur = id;
+    });
+    navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+  });
+
+  const tabs = document.querySelectorAll('.mtab');
+  const cards = document.querySelectorAll('.mcard');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('on'));
+    t.classList.add('on');
+    const cat = t.dataset.cat;
+    cards.forEach(c => {
+      c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+    });
+  }));
+</script>
+</body>
+</html>

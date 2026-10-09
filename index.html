@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深圳市大江智造有限公司 — 人工智能水域救援装备源头厂家</title>
+<meta name="description" content="深圳市大江智造有限公司，集水域救援装备研发、设计、生产、销售为一体的高新技术企业。飞行救生圈、飞行救生艇、遥控救生圈、水面救援机器人、水下搜救机器人等全系列水域救援装备。">
+<style>
+  :root {
+    --deep: #06182e;        /* 最深：hero/页脚背景 */
+    --navy: #0b2b4a;        /* 深海军蓝 */
+    --navy-2: #123a63;      /* 次级蓝 */
+    --orange: #ff5a1f;      /* 救援橙 */
+    --orange-soft: #ff7a45;
+    --paper: #ffffff;
+    --mist: #f4f7fa;        /* 浅灰蓝 */
+    --ink: #0f1e2f;         /* 正文深色 */
+    --muted: #5b6b7c;
+    --line: #e4eaf0;
+    --maxw: 1180px;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+            Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+            "Source Han Sans SC", "Noto Sans SC", sans-serif;
+    --serif: "Songti SC", "Noto Serif SC", "SimSun", serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ===== 导航 ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(6, 24, 46, 0.92);
+    backdrop-filter: saturate(1.2) blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: box-shadow .25s;
+  }
+  .nav.scrolled { box-shadow: 0 6px 30px rgba(4, 14, 26, 0.35); }
+  .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+    height: 68px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 12px; color: #fff; }
+  .brand-mark {
+    width: 38px; height: 38px; border-radius: 9px; flex: none;
+    background: linear-gradient(135deg, var(--orange), #e6430f);
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 19px; color: #fff; letter-spacing: 0;
+  }
+  .brand-text { line-height: 1.15; }
+  .brand-cn { font-weight: 700; font-size: 16px; letter-spacing: 0.03em; }
+  .brand-en { font-size: 11px; letter-spacing: 0.18em; color: #9fb3c8; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a { color: #c8d6e5; font-size: 15px; font-weight: 500;
+    letter-spacing: 0.02em; transition: color .2s; position: relative; }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a.on { color: #fff; }
+  .nav-links a.on::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px;
+    background: var(--orange); border-radius: 2px;
+  }
+  .nav-cta {
+    background: var(--orange); color: #fff !important; padding: 9px 20px;
+    border-radius: 8px; font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: var(--orange-soft) !important; }
+  .burger { display: none; background: none; border: none; cursor: pointer;
+    flex-direction: column; gap: 5px; padding: 6px; }
+  .burger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+
+  /* ===== Hero ===== */
+  .hero {
+    position: relative; background: var(--deep); color: #fff;
+    padding: 150px 0 90px; overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(255, 90, 31, 0.16), transparent 60%),
+      radial-gradient(700px 500px at -10% 110%, rgba(18, 58, 99, 0.55), transparent 60%);
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 13px;
+    letter-spacing: 0.22em; color: var(--orange); font-weight: 600; margin-bottom: 22px; }
+  .eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--orange); }
+  .hero h1 {
+    font-size: clamp(38px, 5.2vw, 62px); line-height: 1.12; font-weight: 800;
+    letter-spacing: 0.01em; margin-bottom: 22px;
+  }
+  .hero h1 .hl { color: var(--orange); }
+  .hero-sub { font-size: 18px; color: #b7c7d8; max-width: 520px; line-height: 1.8;
+    margin-bottom: 34px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+    border-radius: 10px; font-size: 16px; font-weight: 600; letter-spacing: 0.02em;
+    cursor: pointer; border: none; transition: transform .15s, background .2s, color .2s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--orange); color: #fff; }
+  .btn-primary:hover { background: var(--orange-soft); }
+  .btn-ghost { background: transparent; color: #e8eef5; border: 1px solid rgba(255,255,255,0.28); }
+  .btn-ghost:hover { border-color: #fff; color: #fff; }
+  .hero-fig { position: relative; }
+  .hero-fig img { border-radius: 18px; box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    width: 100%; height: auto; }
+  .hero-fig::after {
+    content: ""; position: absolute; inset: 14px -14px -14px 14px;
+    border: 2px solid rgba(255, 90, 31, 0.45); border-radius: 18px; z-index: -1;
+  }
+  .hero-stats { position: relative; margin-top: 70px; display: grid;
+    grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; }
+  .stat { background: rgba(9, 29, 52, 0.65); padding: 24px 26px; }
+  .stat b { display: block; font-size: 32px; font-weight: 800; color: #fff;
+    letter-spacing: 0.01em; line-height: 1.1; }
+  .stat b em { font-style: normal; color: var(--orange); font-size: 20px; }
+  .stat span { font-size: 13.5px; color: #9fb3c8; letter-spacing: 0.04em; }
+
+  /* ===== 区块通用 ===== */
+  section { padding: 88px 0; }
+  .sec-head { margin-bottom: 48px; }
+  .sec-tag { display: inline-flex; align-items: center; gap: 9px; font-size: 13px;
+    color: var(--orange); font-weight: 700; letter-spacing: 0.2em; margin-bottom: 14px; }
+  .sec-tag::before { content: ""; width: 26px; height: 2px; background: var(--orange); }
+  .sec-title { font-size: clamp(26px, 3.2vw, 38px); font-weight: 800; line-height: 1.25;
+    letter-spacing: 0.01em; color: var(--ink); }
+  .sec-lead { margin-top: 14px; font-size: 16.5px; color: var(--muted); max-width: 640px; }
+
+  /* ===== 关于 ===== */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
+  .about-fig img { border-radius: 16px; width: 100%; }
+  .about-body h3 { font-size: 26px; font-weight: 800; margin-bottom: 18px; line-height: 1.3; }
+  .about-body p { color: var(--muted); margin-bottom: 16px; }
+  .about-body p strong { color: var(--ink); font-weight: 600; }
+  .vision { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 24px; }
+  .vision-row { display: flex; gap: 14px; margin-bottom: 16px; }
+  .vision-row .k { flex: none; width: 52px; font-weight: 700; color: var(--orange);
+    font-size: 15px; letter-spacing: 0.04em; }
+  .vision-row .v { color: var(--ink); }
+
+  /* ===== 核心产品 ===== */
+  .featured { background: var(--mist); }
+  .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .pcard { background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .25s, transform .25s; }
+  .pcard:hover { box-shadow: 0 22px 50px rgba(6, 24, 46, 0.12); transform: translateY(-4px); }
+  .pcard-media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #eaf0f6; }
+  .pcard-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .pcard:hover .pcard-media img { transform: scale(1.04); }
+  .pcard-badge { position: absolute; top: 14px; left: 14px; background: var(--orange);
+    color: #fff; font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 6px;
+    letter-spacing: 0.06em; }
+  .pcard-body { padding: 24px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+  .pcard-body h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.01em; }
+  .pcard-en { font-size: 12px; color: #9aa7b5; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 12px; }
+  .pcard-desc { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+  .specs { border-top: 1px solid var(--line); padding-top: 16px; margin-top: auto; }
+  .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+  .spec { display: flex; gap: 8px; font-size: 13.5px; }
+  .spec .sk { color: #8a98a8; flex: none; }
+  .spec .sv { color: var(--ink); font-weight: 600; }
+
+  /* ===== 产品矩阵 ===== */
+  .matrix-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+  .mtab { padding: 9px 20px; border-radius: 999px; border: 1px solid var(--line);
+    background: #fff; color: var(--muted); font-size: 14.5px; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.02em; transition: all .2s; }
+  .mtab:hover { border-color: var(--navy-2); color: var(--ink); }
+  .mtab.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .matrix-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .mcard { background: #fff; border: 1px solid var(--line); border-radius: 13px;
+    overflow: hidden; transition: box-shadow .25s, transform .25s; cursor: pointer; }
+  .mcard:hover { box-shadow: 0 16px 38px rgba(6,24,46,0.1); transform: translateY(-3px); }
+  .mcard-media { aspect-ratio: 4/3; overflow: hidden; background: #eaf0f6; }
+  .mcard-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+  .mcard:hover .mcard-media img { transform: scale(1.05); }
+  .mcard-body { padding: 16px 18px 18px; }
+  .mcard-body h5 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .mcard-body p { font-size: 13px; color: var(--muted); line-height: 1.55;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* ===== 优势 ===== */
+  .adv { background: var(--navy); color: #fff; }
+  .adv .sec-title { color: #fff; }
+  .adv .sec-lead { color: #a9bccf; }
+  .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .adv-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 28px 26px; transition: background .2s, border-color .2s; }
+  .adv-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,90,31,0.5); }
+  .adv-card .n { font-size: 13px; font-weight: 700; color: var(--orange);
+    letter-spacing: 0.14em; margin-bottom: 12px; }
+  .adv-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.01em; }
+  .adv-card p { color: #b6c6d6; font-size: 14.5px; }
+
+  /* ===== 资质 ===== */
+  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .cert-card { text-align: left; }
+  .cert-card .imgbox { aspect-ratio: 3/4; background: var(--mist); border-radius: 13px;
+    overflow: hidden; border: 1px solid var(--line); }
+  .cert-card .imgbox img { width: 100%; height: 100%; object-fit: cover; }
+  .cert-card h5 { margin-top: 12px; font-size: 16px; font-weight: 700; }
+  .cert-card p { font-size: 13px; color: var(--muted); }
+
+  /* ===== 案例 ===== */
+  .cases { background: var(--mist); }
+  .case-tags { display: flex; flex-wrap: wrap; gap: 12px; }
+  .case-tag { background: #fff; border: 1px solid var(--line); border-radius: 10px;
+    padding: 13px 22px; font-size: 15.5px; font-weight: 600; color: var(--ink);
+    letter-spacing: 0.02em; transition: all .2s; }
+  .case-tag:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(6,24,46,0.08); }
+
+  /* ===== 联系 ===== */
+  .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: stretch; }
+  .contact-card { background: var(--deep); color: #fff; border-radius: 18px; padding: 46px 44px; }
+  .contact-card h3 { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+  .contact-card .lead { color: #a9bccf; margin-bottom: 32px; font-size: 16px; }
+  .citem { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .citem .ck { flex: none; width: 86px; color: #8fa3b8; font-size: 14px; letter-spacing: 0.04em; }
+  .citem .cv { font-size: 16.5px; font-weight: 600; }
+  .citem .cv a { color: var(--orange); }
+  .contact-side { display: flex; flex-direction: column; gap: 20px; }
+  .cside { background: var(--mist); border: 1px solid var(--line); border-radius: 16px;
+    padding: 28px; flex: 1; }
+  .cside h5 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .cside p { color: var(--muted); font-size: 14.5px; }
+
+  /* ===== 页脚 ===== */
+  footer { background: #041120; color: #7e91a5; padding: 40px 0; font-size: 14px; }
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .foot-inner .fbrand { color: #c8d6e5; font-weight: 700; font-size: 15px; }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 120px 0 70px; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .matrix-grid { grid-template-columns: repeat(2, 1fr); }
+    .adv-grid { grid-template-columns: 1fr 1fr; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { position: fixed; top: 68px; left: 0; right: 0; background: var(--deep);
+      flex-direction: column; gap: 0; padding: 10px 24px 24px; transform: translateY(-130%);
+      transition: transform .3s; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-links.open { transform: translateY(0); }
+    .nav-links a { padding: 14px 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-links a.on::after { display: none; }
+    .burger { display: flex; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .adv-grid { grid-template-columns: 1fr; }
+    .matrix-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">救</span>
+      <span class="brand-text">
+        <span class="brand-cn">深圳市大江智造</span><br>
+        <span class="brand-en">DA JIANG RESCUE</span>
+      </span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="on">首页</a>
+      <a href="#about">关于我们</a>
+      <a href="#products">核心产品</a>
+      <a href="#matrix">产品矩阵</a>
+      <a href="#advantages">技术优势</a>
+      <a href="#cert">资质证书</a>
+      <a href="#cases">使用案例</a>
+      <a href="#contact" class="nav-cta">联系我们</a>
+      <a href="index-en.html" style="color:#9fb3c8;font-size:13px;letter-spacing:.06em;">EN</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">AI 水域救援装备源头厂家</span>
+        <h1>科技守护生命<br><span class="hl">水空两栖</span>全域救援</h1>
+        <p class="hero-sub">深圳市大江智造有限公司，集水域救援装备研发、设计、生产、销售为一体的高新技术企业。飞行救生圈、飞行救生艇、遥控救生圈、救援机器人等全系列产品，覆盖空中、水面、水下全域救援场景。</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">了解核心产品</a>
+          <a href="#contact" class="btn btn-ghost">获取报价 · 技术资料</a>
+        </div>
+      </div>
+      <div class="hero-fig">
+        <img src="images/hero.jpg" alt="大江智造水域救援装备" width="1588" height="1600">
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>2018<em>年</em></b><span>成立于深圳 · 高新技术企业</span></div>
+      <div class="stat"><b>27<em>+</em></b><span>水域救援产品系列</span></div>
+      <div class="stat"><b>研产销<em>一体</em></b><span>研发 · 设计 · 生产 · 销售</span></div>
+      <div class="stat"><b>全域<em>覆盖</em></b><span>空中 · 水面 · 水下 · 特种机器人</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- 关于我们 -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-fig"><img src="images/about.jpg" alt="大江智造公司" width="1200" height="601"></div>
+      <div class="about-body">
+        <span class="sec-tag">关于我们</span>
+        <h3>专业水域救援装备源头厂家</h3>
+        <p>公司成立于 <strong>2018 年 9 月</strong>，位于深圳市，是一家专业生产水域救援设备的厂家，集水域救援产品的<strong>研发、设计、生产、销售</strong>为一体的高新技术企业。</p>
+        <p>主营产品涵盖水面移动救生担架、水上救援飞翼、水面救援机器人、飞行救生艇、飞行救生圈、遥控救生圈、水下搜救机器人、无人侦测船、消防侦察机器人、消防灭火机器人等设备。</p>
+        <p>公司奉行「<strong>诚信为本，创新为魂</strong>」的精神，以高效率、高质量为理念，以客户满意为宗旨，立足新起点，践行社会责任。</p>
+        <div class="vision">
+          <div class="vision-row"><span class="k">愿景</span><span class="v">发展创新，打造国内水域救援装备领跑者</span></div>
+          <div class="vision-row"><span class="k">使命</span><span class="v">务实创新，成就未来</span></div>
+          <div class="vision-row"><span class="k">服务</span><span class="v">质量好、效率高、客户满意为目标；顾客为关注焦点、持续改进</span></div>
+          <div class="vision-row"><span class="k">口号</span><span class="v">和谐、共赢、发展</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 核心产品 -->
+<section class="featured" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">核心产品</span>
+      <h2 class="sec-title">明星救援装备</h2>
+      <p class="sec-lead">水空两栖、北斗定位、自动返航、双光图传——行业领先的智能救援装备，覆盖落水救援、物资运输、水下搜救等任务。</p>
+    </div>
+    <div class="featured-grid">
+
+      <!-- 飞行救生圈 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">水空两栖 · 行业首创语音喊话</span>
+          <img src="images/flying-ring.jpg" alt="飞行救生圈" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>飞行救生圈</h4>
+          <div class="pcard-en">Flying Life Buoy</div>
+          <p class="pcard-desc">兼具水面救援与空中飞行能力，支持遥控飞行、航线自动飞行、指点飞行与空中悬停，突破地形限制，快速响应目标区域。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">尺寸</span><span class="sv">950×950×110 mm</span></div>
+              <div class="spec"><span class="sk">最大飞行高度</span><span class="sv">520 m</span></div>
+              <div class="spec"><span class="sk">最大飞行速度</span><span class="sv">14 m/s</span></div>
+              <div class="spec"><span class="sk">抗风能力</span><span class="sv">7 级</span></div>
+              <div class="spec"><span class="sk">防护等级</span><span class="sv">IP68</span></div>
+              <div class="spec"><span class="sk">飞行时间</span><span class="sv">15 min</span></div>
+              <div class="spec"><span class="sk">定位</span><span class="sv">北斗 · 红外双光图传</span></div>
+              <div class="spec"><span class="sk">遥控距离</span><span class="sv">1–10 km</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 飞行救生艇 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">水空双栖 · 语音对讲喊话</span>
+          <img src="images/flying-boat.jpg" alt="飞行救生艇" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>飞行救生艇</h4>
+          <div class="pcard-en">Flying Rescue Boat</div>
+          <p class="pcard-desc">水面航行与空中飞行水空两栖，内嵌本机控制按键，配备高清摄像机（可选红外双光），遥控端实时显示视频，具备语音对讲与喊话功能。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">尺寸</span><span class="sv">1150×1100×300 mm</span></div>
+              <div class="spec"><span class="sk">重量</span><span class="sv">15 kg</span></div>
+              <div class="spec"><span class="sk">空载速度</span><span class="sv">12 m/s（空）/ 4 m/s（水）</span></div>
+              <div class="spec"><span class="sk">载人速度</span><span class="sv">2 m/s（60 kg）</span></div>
+              <div class="spec"><span class="sk">遥控距离</span><span class="sv">10 km（空）/ 1100 m（水）</span></div>
+              <div class="spec"><span class="sk">续航</span><span class="sv">8.5 min（空）/ 30 min（水）</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 遥控救生圈 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">三星定位 · 自动返航</span>
+          <img src="images/remote-ring.jpg" alt="遥控救生圈" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>遥控救生圈</h4>
+          <div class="pcard-en">Remote-Controlled Life Buoy</div>
+          <p class="pcard-desc">专为水上救援设计，具备强大动力与先进导航系统，适用于河流、湖泊、海洋等水域的落水者救援与物资运输。三秒下水投入施救。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">尺寸</span><span class="sv">1100×800×200 mm</span></div>
+              <div class="spec"><span class="sk">浮力</span><span class="sv">1500 N</span></div>
+              <div class="spec"><span class="sk">空载 / 负载速度</span><span class="sv">6.5 / 2.1 m/s</span></div>
+              <div class="spec"><span class="sk">续航时间</span><span class="sv">90 min</span></div>
+              <div class="spec"><span class="sk">遥控距离</span><span class="sv">1500 m</span></div>
+              <div class="spec"><span class="sk">拖拽力</span><span class="sv">1000 kg</span></div>
+              <div class="spec"><span class="sk">定位</span><span class="sv">GPS + GALILEO + 北斗</span></div>
+              <div class="spec"><span class="sk">防护 / 材质</span><span class="sv">IP68 / HDPE</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- U型救生圈 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">一体成型 · 单兵佳品</span>
+          <img src="images/u-ring.jpg" alt="U型救生圈" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>U 型救生圈</h4>
+          <div class="pcard-en">U-Type Life Buoy</div>
+          <p class="pcard-desc">机身中间设有可抓握横杠，与机身一体化成型、不可拆卸、坚固耐用。单手操控、远距遥控、迅速到达，取代传统救援方式。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">尺寸</span><span class="sv">1020×800×200 mm</span></div>
+              <div class="spec"><span class="sk">浮力</span><span class="sv">500 N</span></div>
+              <div class="spec"><span class="sk">空载 / 负载速度</span><span class="sv">6.5 / 2.1 m/s</span></div>
+              <div class="spec"><span class="sk">续航时间</span><span class="sv">90 min</span></div>
+              <div class="spec"><span class="sk">遥控距离</span><span class="sv">1500 m</span></div>
+              <div class="spec"><span class="sk">拖拽力</span><span class="sv">500 kg</span></div>
+              <div class="spec"><span class="sk">定位</span><span class="sv">GPS + GALILEO + 北斗</span></div>
+              <div class="spec"><span class="sk">语音对讲</span><span class="sv">≥ 2000 m</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 水面救援机器人 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">定制挂载 · 多人营救</span>
+          <img src="images/surface-robot.jpg" alt="水面救援机器人" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>水面救援机器人</h4>
+          <div class="pcard-en">Surface Rescue Robot</div>
+          <p class="pcard-desc">更快、更准地为被困者第一时间提供漂浮物，在各种复杂水文条件下携带救援物资，遥控进行孤岛转移等多人营救任务。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">定制挂载</span><span class="sv">图传系统 / GoPro 相机</span></div>
+              <div class="spec"><span class="sk">可选挂载</span><span class="sv">双向喊话器 / 应急探照灯 / 救生包</span></div>
+              <div class="spec"><span class="sk">适用任务</span><span class="sv">孤岛转移 · 多人营救</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 消防灭火机器人 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">80 L/S 水炮 · 全地形履带</span>
+          <img src="images/fire-robot.jpg" alt="消防灭火机器人" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>消防灭火机器人</h4>
+          <div class="pcard-en">Firefighting Robot</div>
+          <p class="pcard-desc">锂电池动力、远距离操控，替代消防员执行危险救援任务。具备灭火、音视频侦察、有毒有害气体侦察、灾区环境侦察功能。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">外形尺寸</span><span class="sv">≤1650×950×1300 mm</span></div>
+              <div class="spec"><span class="sk">整机质量</span><span class="sv">约 470 kg</span></div>
+              <div class="spec"><span class="sk">水炮流量</span><span class="sv">80 L/S</span></div>
+              <div class="spec"><span class="sk">水炮射程</span><span class="sv">> 80 m</span></div>
+              <div class="spec"><span class="sk">最大爬坡</span><span class="sv">40°</span></div>
+              <div class="spec"><span class="sk">最大越障</span><span class="sv">220 mm</span></div>
+              <div class="spec"><span class="sk">防护等级</span><span class="sv">IP65</span></div>
+              <div class="spec"><span class="sk">持续工作时间</span><span class="sv">3 h</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 水下搜救机器人 -->
+      <div class="pcard">
+        <div class="pcard-media"><span class="pcard-badge">100 m 下潜 · 4K 图传</span>
+          <img src="images/underwater-robot.jpg" alt="水下搜救机器人" loading="lazy"></div>
+        <div class="pcard-body">
+          <h4>水下搜救机器人</h4>
+          <div class="pcard-en">Underwater Search & Rescue ROV</div>
+          <p class="pcard-desc">尺寸小、重量轻便、使用灵活，可在水下恶劣危险环境下代替潜水员开展安全高效的工作。核心部件含推进器、摄像系统、声呐、机械手、显示控制器。</p>
+          <div class="specs">
+            <div class="specs-grid">
+              <div class="spec"><span class="sk">尺寸</span><span class="sv">400×268×166 mm</span></div>
+              <div class="spec"><span class="sk">最大下潜深度</span><span class="sv">≥ 100 m</span></div>
+              <div class="spec"><span class="sk">最大航速</span><span class="sv">≥ 1.5 m/s</span></div>
+              <div class="spec"><span class="sk">推进器</span><span class="sv">8 个</span></div>
+              <div class="spec"><span class="sk">视频</span><span class="sv">4K @ 30 FPS</span></div>
+              <div class="spec"><span class="sk">续航</span><span class="sv">1–2 h</span></div>
+              <div class="spec"><span class="sk">机械臂</span><span class="sv">抓力 ≥ 70 N</span></div>
+              <div class="spec"><span class="sk">补光灯</span><span class="sv">2 × 2000 LM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 产品矩阵 -->
+<section id="matrix">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">产品矩阵</span>
+      <h2 class="sec-title">全系列水域救援装备</h2>
+      <p class="sec-lead">从空中到水面、从水下到特种机器人，覆盖应急救援全场景。</p>
+    </div>
+    <div class="matrix-tabs" id="matrixTabs">
+      <button class="mtab on" data-cat="all">全部</button>
+      <button class="mtab" data-cat="air">空中救援</button>
+      <button class="mtab" data-cat="surface">水面救援</button>
+      <button class="mtab" data-cat="underwater">水下救援</button>
+      <button class="mtab" data-cat="robot">特种机器人</button>
+      <button class="mtab" data-cat="aux">探测辅助</button>
+    </div>
+    <div class="matrix-grid" id="matrixGrid">
+
+      <div class="mcard" data-cat="air"><div class="mcard-media"><img src="images/lighting-drone.jpg" alt="照明无人机" loading="lazy"></div><div class="mcard-body"><h5>照明无人机</h5><p>≥24 小时驻空应急照明，模块化结构，展开 ≤30 秒</p></div></div>
+
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/stretcher.jpg" alt="水面移动救生担架" loading="lazy"></div><div class="mcard-body"><h5>水面移动救生担架</h5><p>浮力 ≥150 kg，遥控 ≥1000–3000 m，可折叠款可选</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/salvage-robot.jpg" alt="水上救捞机器人" loading="lazy"></div><div class="mcard-body"><h5>水上救捞机器人</h5><p>机械臂抓手 ≥2 个，浮力 ≥200 kg，救捞轻生/无意识落水者</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/self-inflate-boat.jpg" alt="无人遥控救生艇" loading="lazy"></div><div class="mcard-body"><h5>无人遥控救生艇（自充气）</h5><p>一键自动快速充气，最多营救 4–6 人</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/portable-boat.jpg" alt="便携式救生艇" loading="lazy"></div><div class="mcard-body"><h5>便携式水上（下）救生艇</h5><p>潜水 40 m，水上速度 22 km/h，重量 &lt;31 kg</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/self-righting-boat.jpg" alt="自扶正救援艇" loading="lazy"></div><div class="mcard-body"><h5>自扶正救援艇</h5><p>翻覆 90° 自动扶正，多层加固复合材料船身</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/rubber-boat.jpg" alt="充气救援艇" loading="lazy"></div><div class="mcard-body"><h5>充气救援艇（橡皮艇）</h5><p>7–9 人，安全载重 1200 kg，抗 3–4 级风浪</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/assault-boat.jpg" alt="救援船艇" loading="lazy"></div><div class="mcard-body"><h5>救援船艇（冲锋舟）</h5><p>12 人，载重 ≥860 kg，防滑甲板</p></div></div>
+      <div class="mcard" data-cat="surface"><div class="mcard-media"><img src="images/outboard.jpg" alt="舷外机" loading="lazy"></div><div class="mcard-body"><h5>舷外机（船外机）</h5><p>输出功率 ≥20 kW，满舵角度 ≥48°</p></div></div>
+
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/sonar.jpg" alt="声呐" loading="lazy"></div><div class="mcard-body"><h5>声呐</h5><p>1000 kHz，单侧 1–35 m，两侧总覆盖 70 m</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/diving-salvage.jpg" alt="潜水打捞系统" loading="lazy"></div><div class="mcard-body"><h5>潜水打捞系统</h5><p>浮力打捞袋，单袋提升 2000–4000 kg</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/diver-propulsion.jpg" alt="手持推进器" loading="lazy"></div><div class="mcard-body"><h5>手持推进器</h5><p>为潜水员提供水下额外动力，节省体力</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/depth-meter.jpg" alt="水深探测仪" loading="lazy"></div><div class="mcard-body"><h5>水深探测仪</h5><p>高精度测量，便携易用，实时自动化</p></div></div>
+      <div class="mcard" data-cat="underwater"><div class="mcard-media"><img src="images/flow-meter.jpg" alt="流速监测仪" loading="lazy"></div><div class="mcard-body"><h5>流速监测仪</h5><p>手持式电波流速仪，高精度现场水流监测</p></div></div>
+
+      <div class="mcard" data-cat="robot"><div class="mcard-media"><img src="images/demolition-robot.jpg" alt="破拆机器人" loading="lazy"></div><div class="mcard-body"><h5>破拆机器人</h5><p>整机 4500 kg，360° 回转，液压破拆模块</p></div></div>
+      <div class="mcard" data-cat="robot"><div class="mcard-media"><img src="images/smoke-robot.jpg" alt="排烟机器人" loading="lazy"></div><div class="mcard-body"><h5>排烟机器人</h5><p>高排烟量、高牵引力，履带型消防排烟</p></div></div>
+      <div class="mcard" data-cat="robot"><div class="mcard-media"><img src="images/drain-robot.jpg" alt="排涝机器人" loading="lazy"></div><div class="mcard-body"><h5>排涝机器人</h5><p>最大排量 >750 m³/h，自吸高度 >6 m</p></div></div>
+
+      <div class="mcard" data-cat="aux"><div class="mcard-media"><img src="images/survey-boat.jpg" alt="无人探测船" loading="lazy"></div><div class="mcard-body"><h5>无人探测船</h5><p>搭载 ADCP、测深仪、水质监测，4G 传输</p></div></div>
+      <div class="mcard" data-cat="aux"><div class="mcard-media"><img src="images/launcher.jpg" alt="抛投器" loading="lazy"></div><div class="mcard-body"><h5>抛投器</h5><p>智能语音测距，压缩空气驱动，多种发射角度</p></div></div>
+      <div class="mcard" data-cat="aux"><div class="mcard-media"><img src="images/rope-bag.jpg" alt="救援绳包" loading="lazy"></div><div class="mcard-body"><h5>救援绳包 · 救生拉杆</h5><p>超轻碳纤维，多组合配置，远距离施救</p></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 技术优势 -->
+<section class="adv" id="advantages">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">技术优势</span>
+      <h2 class="sec-title">智能操控 · 安全冗余</h2>
+      <p class="sec-lead">全链路自动化与多重安全冗余机制，杜绝任务中断风险，保障设备与人员安全。</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card"><div class="n">01</div><h4>多模态飞行控制</h4><p>支持遥控飞行、航线自动飞行、指点飞行及空中悬停，快速响应目标区域，突破地形限制。</p></div>
+      <div class="adv-card"><div class="n">02</div><h4>全链路自动化</h4><p>一键起飞/返航、低电/失联自动返航，保障设备与人员安全；航线规划、指点飞行实现精准路径控制。</p></div>
+      <div class="adv-card"><div class="n">03</div><h4>自主定位抗扰稳控</h4><p>北斗定位、空中定点悬停、低电预警、失联返航，多重安全冗余机制，杜绝任务中断。</p></div>
+      <div class="adv-card"><div class="n">04</div><h4>全天候实时影像</h4><p>高清红外双光图传，内置红外+可见光双光摄像机，实时回传水面/空中画面，昼夜及恶劣天气侦查。</p></div>
+      <div class="adv-card"><div class="n">05</div><h4>远距语音对讲</h4><p>行业首创自带语音喊话功能，遥控距离 1–10 公里，无需外挂对讲机或手机 APP。</p></div>
+      <div class="adv-card"><div class="n">06</div><h4>高防护等级</h4><p>IP68 / IP65 防护，HDPE 坚固外壳，抗风 7 级、二级海况，适应复杂水域环境。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 资质证书 -->
+<section id="cert">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">资质证书</span>
+      <h2 class="sec-title">资质与认证</h2>
+      <p class="sec-lead">商标证书、ISO 体系证书、专利证书、资质证书、计算机软件著作权、产品检测报告。</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-trademark.png" alt="商标证书" loading="lazy"></div><h5>商标证书</h5><p>注册商标</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-iso.png" alt="ISO体系证书" loading="lazy"></div><h5>ISO 体系证书</h5><p>质量管理体系认证</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-patent.png" alt="专利证书" loading="lazy"></div><h5>专利证书</h5><p>专利技术</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-qualification.png" alt="资质证书" loading="lazy"></div><h5>资质证书</h5><p>企业资质</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-software.png" alt="计算机软件著作权" loading="lazy"></div><h5>计算机软件著作权</h5><p>软件著作权登记</p></div>
+      <div class="cert-card"><div class="imgbox"><img src="images/cert-test.png" alt="产品检测报告" loading="lazy"></div><h5>产品检测报告</h5><p>产品检验检测</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 使用案例 -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">使用案例</span>
+      <h2 class="sec-title">客户与实战场景</h2>
+      <p class="sec-lead">产品广泛应用于应急管理、消防救援、海事海警、公安、防汛救灾等场景。</p>
+    </div>
+    <div class="case-tags">
+      <span class="case-tag">应急管理部</span>
+      <span class="case-tag">海南航空</span>
+      <span class="case-tag">江西消防</span>
+      <span class="case-tag">哈尔滨市森林消防支队</span>
+      <span class="case-tag">广西壮族自治区人民政府</span>
+      <span class="case-tag">广东省退役军人事务厅</span>
+      <span class="case-tag">四川消防</span>
+      <span class="case-tag">天津市公安局治安管理总队</span>
+      <span class="case-tag">广西应急</span>
+      <span class="case-tag">福建某部</span>
+      <span class="case-tag">福州海警</span>
+      <span class="case-tag">东莞消防</span>
+      <span class="case-tag">大连消防</span>
+      <span class="case-tag">辽宁消防</span>
+      <span class="case-tag">丹东海事局</span>
+      <span class="case-tag">汕尾应急</span>
+      <span class="case-tag">潮阳消防</span>
+      <span class="case-tag">蓝天救援</span>
+      <span class="case-tag">达州消防</span>
+      <span class="case-tag">天津消防</span>
+      <span class="case-tag">资阳应急</span>
+      <span class="case-tag">海南应急</span>
+      <span class="case-tag">湖北救援总队</span>
+      <span class="case-tag">齐齐哈尔消防</span>
+      <span class="case-tag">龙岩矿山救援</span>
+      <span class="case-tag">广安消防</span>
+      <span class="case-tag">黄河水文</span>
+      <span class="case-tag">长江中游水文</span>
+    </div>
+  </div>
+</section>
+
+<!-- 联系我们 -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="sec-tag">联系我们</span>
+        <h3>深圳市大江智造有限公司</h3>
+        <p class="lead">欢迎各级应急、消防、海事、公安单位及经销商洽谈合作，索取产品技术资料与报价。</p>
+        <div class="citem"><span class="ck">联系人</span><span class="cv">张连见</span></div>
+        <div class="citem"><span class="ck">联系电话</span><span class="cv"><a href="tel:13576562431">135 7656 2431</a></span></div>
+        <div class="citem"><span class="ck">公司网址</span><span class="cv"><a href="http://www.szdjzz.com" target="_blank" rel="noopener">www.szdjzz.com</a></span></div>
+        <div class="citem"><span class="ck">公司地址</span><span class="cv">深圳市宝安区福永街道白石厦社区东区美华路 17 栋</span></div>
+      </div>
+      <div class="contact-side">
+        <div class="cside"><h5>关于定制</h5><p>产品支持根据不同场景、不同需求选配搭载相关设备或功能，包括红外双光摄像机、语音对讲、定制挂载等。</p></div>
+        <div class="cside"><h5>产品与服务</h5><p>提供水域救援装备的研发、设计、生产、销售一体化服务，以及技术资料（参数、检测报告）支持。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="fbrand">深圳市大江智造有限公司 · DA JIANG RESCUE</div>
+    <div>© 2018–2026 深圳市大江智造有限公司 · 科技守护生命</div>
+  </div>
+</footer>
+
+<script>
+  // 导航滚动阴影
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // 移动端菜单
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navLinks');
+  burger.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // 滚动高亮
+  const sections = ['home','about','products','matrix','advantages','cert','cases','contact'];
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let cur = 'home';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) cur = id;
+    });
+    navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+  });
+
+  // 产品筛选
+  const tabs = document.querySelectorAll('.mtab');
+  const cards = document.querySelectorAll('.mcard');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('on'));
+    t.classList.add('on');
+    const cat = t.dataset.cat;
+    cards.forEach(c => {
+      c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+    });
+  }));
+</script>
+</body>
+</html>
